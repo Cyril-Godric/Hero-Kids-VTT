@@ -33,6 +33,12 @@
   font-size: 1.1em;
 }
 
+.herokids.sheet.actor .pool-card.read-only input {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: default;
+}
+
 .herokids.sheet.actor .items-header {
   display: flex;
   justify-content: space-between;

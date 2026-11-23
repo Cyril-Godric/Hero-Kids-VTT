@@ -15,19 +15,19 @@
   <section class="pools-grid">
     <div class="pool-card">
       <button type="button" class="roll-pool" data-pool="melee">⚔️ Melee</button>
-      <input type="number" name="system.pools.melee" value="{{system.pools.melee}}" min="0" max="6"/>
+      <input type="number" name="system.pools.melee" value="{{system.pools.melee}}" min="0" max="6" {{#if (eq game.user.isGM)}}{{else}}readonly{{/if}}/>
     </div>
     <div class="pool-card">
       <button type="button" class="roll-pool" data-pool="ranged">🏹 Ranged</button>
-      <input type="number" name="system.pools.ranged" value="{{system.pools.ranged}}" min="0" max="6"/>
+      <input type="number" name="system.pools.ranged" value="{{system.pools.ranged}}" min="0" max="6" {{#if (eq game.user.isGM)}}{{else}}readonly{{/if}}/>
     </div>
     <div class="pool-card">
       <button type="button" class="roll-pool" data-pool="magic">✨ Magic</button>
-      <input type="number" name="system.pools.magic" value="{{system.pools.magic}}" min="0" max="6"/>
+      <input type="number" name="system.pools.magic" value="{{system.pools.magic}}" min="0" max="6" {{#if (eq game.user.isGM)}}{{else}}readonly{{/if}}/>
     </div>
     <div class="pool-card">
       <button type="button" class="roll-pool" data-pool="armor">🛡️ Armor</button>
-      <input type="number" name="system.pools.armor" value="{{system.pools.armor}}" min="0" max="6"/>
+      <input type="number" name="system.pools.armor" value="{{system.pools.armor}}" min="0" max="6" {{#if (eq game.user.isGM)}}{{else}}readonly{{/if}}/>
     </div>
   </section>
 

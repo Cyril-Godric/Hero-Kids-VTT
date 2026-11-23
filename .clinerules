@@ -1,0 +1,33 @@
+# Project: Hero Kids Game System for Foundry VTT
+
+## Stack & Environment
+- **Target Platform:** Foundry VTT v12 / v13+ (ES Modules `.mjs`, Handlebars `.hbs`, plain CSS).
+- **System ID:** `herokids` (all template paths must start with `systems/herokids/`).
+- **No Build Step:** Write clean, modern vanilla ES2022+ JavaScript and standard CSS directly—no TypeScript, Webpack, Vite, or Tailwind compilation required.
+
+## Foundry VTT Coding Conventions
+- Use modern Foundry APIs (`foundry.utils.mergeObject`, `foundry.utils.deepClone`, `Roll`, `ChatMessage`).
+- Always declare `static get defaultOptions()` or ApplicationV2 patterns cleanly, and guard event listeners with `if (!this.isEditable) return;`.
+- Keep document data schema changes synchronized between `template.json` and the Actor/Item sheets.
+- Never replace `system.health.value` and `system.health.max` with separate booleans; keep `value` and `max` numeric so Foundry token resource bars stay synchronized, and derive UI condition states from `max - value`.
+
+## Hero Kids Game Rules (Strictly Enforce)
+- **Dice Mechanics:** All checks use d6 dice pools where **only the single highest die counts** (`Nd6kh`).
+  - If a pool is `0` (or reduced to `0` by penalties), roll **2d6 and keep the lowest** (`2d6kl`).
+  - Never sum dice together; always compare the single highest die (ties go to the defender/target).
+- **Combat & Damage:**
+  - Every successful attack deals **1 damage** (plus any bonus damage from specific Powers/Equipment).
+  - Opposed rolls compare Attacker's highest d6 vs. Defender's Armor highest d6. If Attacker > Defender, apply 1 damage.
+- **Health Boxes:**
+  - Standard Heroes have 3 boxes (`max: 3`): **Bruised**, **Hurt**, **KO**.
+  - 4-box characters (`max: 4`) use: **Bruised**, **Hurt**, **Tired**, **KO**.
+  - Boss monsters with 5+ boxes prepend extra **Bruised** boxes before **Hurt**, **Tired**, **KO**.
+  - Being Bruised, Hurt, or Tired does **not** apply dice penalties in Hero Kids; only reaching **KO** knocks the character out of combat.
+- **Action Economy & Items:**
+  - Each turn allows 1 Move (up to 4 squares) and 1 Action (Attack, Use Power, Drink Healing Potion, etc.).
+  - Drinking a **Healing Potion** restores 1 health box (heals 1 damage) and decrements `system.potions.value` by 1.
+  - **Skills** (Tracking, Stealth, Athletics, Perception) grant **+1 bonus d6** to relevant ability checks when trained/checked.
+
+## Editing & Output Rules
+- Read existing files in `module/`, `templates/`, and `styles/` before making changes to match existing class names and CSS selectors.
+- Make minimal, surgical diffs—do not rewrite unrelated files or rename existing CSS classes unless requested.
