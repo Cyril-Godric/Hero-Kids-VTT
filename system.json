@@ -29,7 +29,7 @@
     "units": "sq"
   },
   "primaryTokenAttribute": "health",
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/Cyril-Godric/Hero-Kids-VTT",
+  "manifest": "https://raw.githubusercontent.com/Cyril-Godric/Hero-Kids-VTT/main/system.json",
+  "download": "https://github.com/Cyril-Godric/Hero-Kids-VTT/archive/refs/heads/main.zip"
 }
