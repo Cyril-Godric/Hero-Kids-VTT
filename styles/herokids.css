@@ -1,0 +1,42 @@
+.herokids.sheet.actor .sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.herokids.sheet.actor .pools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.herokids.sheet.actor .pool-card {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.herokids.sheet.actor .pool-card button {
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.herokids.sheet.actor .pool-card input {
+  width: 45px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.herokids.sheet.actor .items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #444;
+  padding-bottom: 4px;
+}

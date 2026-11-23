@@ -1,0 +1,35 @@
+{
+  "id": "herokids",
+  "title": "Hero Kids",
+  "description": "A custom Foundry VTT game system for Hero Kids.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Custom Builder"
+    }
+  ],
+  "esmodules": ["module/herokids.mjs"],
+  "styles": ["styles/herokids.css"],
+  "documentTypes": {
+    "Actor": {
+      "hero": {},
+      "monster": {}
+    },
+    "Item": {
+      "power": {},
+      "equipment": {}
+    }
+  },
+  "grid": {
+    "distance": 1,
+    "units": "sq"
+  },
+  "primaryTokenAttribute": "health",
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

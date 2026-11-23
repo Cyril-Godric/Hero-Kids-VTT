@@ -1,0 +1,49 @@
+{
+  "Actor": {
+    "types": ["hero", "monster"],
+    "templates": {
+      "combatant": {
+        "health": {
+          "value": 3,
+          "max": 3
+        },
+        "pools": {
+          "melee": 1,
+          "ranged": 1,
+          "magic": 0,
+          "armor": 1
+        },
+        "notes": ""
+      }
+    },
+    "hero": {
+      "templates": ["combatant"],
+      "potions": {
+        "value": 1,
+        "max": 2
+      },
+      "skills": {
+        "tracking": false,
+        "stealth": false,
+        "athletics": false,
+        "perception": false
+      }
+    },
+    "monster": {
+      "templates": ["combatant"],
+      "tier": "minion"
+    }
+  },
+  "Item": {
+    "types": ["power", "equipment"],
+    "power": {
+      "description": "",
+      "poolType": "melee",
+      "isBonusAction": false
+    },
+    "equipment": {
+      "description": "",
+      "quantity": 1
+    }
+  }
+}
