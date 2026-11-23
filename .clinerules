@@ -31,3 +31,12 @@
 ## Editing & Output Rules
 - Read existing files in `module/`, `templates/`, and `styles/` before making changes to match existing class names and CSS selectors.
 - Make minimal, surgical diffs—do not rewrite unrelated files or rename existing CSS classes unless requested.
+
+## Foundry VTT v14 Architecture Rules
+- Target Foundry VTT v14 ONLY. Never use legacy V1 `ActorSheet`, `defaultOptions()`, `getData()`, `mergeObject()`, or jQuery `activateListeners(html)`.
+- Always extend `HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2)`.
+- Configure templates via `static PARTS = { sheet: { template: "systems/herokids/templates/actor/hero-sheet.hbs" } }`.
+- Configure window size and form auto-save via `static DEFAULT_OPTIONS = { classes: ["herokids", "sheet", "actor"], position: { width: 760, height: 540 }, form: { submitOnChange: true }, actions: { ... } }`.
+- Prepare template data in `async _prepareContext(options)` using `this.document` and `this.document.system`.
+- Handle clicks using `data-action="actionName"` attributes in Handlebars and static methods in `DEFAULT_OPTIONS.actions`.
+- In `.hbs` templates, wrap content in a standard `<div class="herokids-card">` (ApplicationV2 automatically provides the `<form>` wrapper when `tag: "form"` or `ActorSheetV2` is used—do not nest a second `<form>` tag inside the template).
