@@ -2,7 +2,7 @@
   "id": "herokids",
   "title": "Hero Kids",
   "description": "A custom Foundry VTT game system for Hero Kids.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
